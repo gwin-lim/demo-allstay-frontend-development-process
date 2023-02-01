@@ -1,4 +1,5 @@
 import React from 'react';
+import '@style/style.css';
 import Logo from '@comp/Logo';
 
 function App() {

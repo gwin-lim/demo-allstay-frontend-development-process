@@ -26,6 +26,12 @@ const ForkTsCheckerWebpackPlugin =
     : require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
+const {
+  svgrOptions,
+  fileLoaderOptions,
+  issuer
+} = require('../svgr.config');
+
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
 const { appPath } = require('./paths');
 
@@ -352,6 +358,10 @@ module.exports = function (webpackEnv) {
           // match the requirements. When no loader matches it will fall
           // back to the "file" loader at the end of the loader list.
           oneOf: [
+            {
+              test: /\.md$/i,
+              use: 'raw-loader',
+            },
             // TODO: Merge this config once `image/avif` is in the mime-db
             // https://github.com/jshttp/mime-db
             {
@@ -381,26 +391,14 @@ module.exports = function (webpackEnv) {
               use: [
                 {
                   loader: require.resolve('@svgr/webpack'),
-                  options: {
-                    prettier: false,
-                    svgo: false,
-                    svgoConfig: {
-                      plugins: [{ removeViewBox: false }],
-                    },
-                    titleProp: true,
-                    ref: true,
-                  },
+                  options: svgrOptions,
                 },
                 {
-                  loader: require.resolve('file-loader'),
-                  options: {
-                    name: 'static/media/[name].[hash].[ext]',
-                  },
+                  loader: 'file-loader',
+                  options: fileLoaderOptions,
                 },
               ],
-              issuer: {
-                and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-              },
+              issuer: issuer,
             },
             // Process application JS with Babel.
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.

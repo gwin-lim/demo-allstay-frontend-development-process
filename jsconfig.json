@@ -3,12 +3,23 @@
     "baseUrl": ".",
     "paths": {
       "@comp/*": ["./src/component/*"],
+      "@hook/*": ["./src/hook/*"],
       "@img/*": ["./src/asset/img/*"],
+      "@svg/*": ["./src/asset/svg/*"],
+      "@md/*": ["./src/asset/md/*"],
+      "@store/*": ["./src/store/*"],
+      "@route/*": ["./src/route/*"],
+      "@page/*": ["./src/page/*"],
+      "@style/*": ["./src/style/*"],
+      "@font/*": ["./src/asset/font/*"],
+      "@asset/*": ["./src/asset/*"],
+      "@helper/*": ["./src/helper/*"],
+      "@util/*": ["./src/util/*"],
+      "@service/*": ["src/service/*"],
       "src/*": ["./src/*"],
-      "@/*": ["./src/*"],
-      "@asset/*": ["./src/asset/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["tailwind.config.js", "src"],
   "exclude": ["node_modules"]
 }

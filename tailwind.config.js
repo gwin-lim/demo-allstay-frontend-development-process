@@ -1,10 +1,3 @@
-module.exports = {
-  content: [
-    "./public/**/*.html",
-    "./src/**/*.{js,jsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+const config = require('./src/style/tw.conf.js');
+
+module.exports = { ...config };
