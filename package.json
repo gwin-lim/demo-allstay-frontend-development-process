@@ -7,8 +7,7 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=3f757742fb90"
+    "build-storybook": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
