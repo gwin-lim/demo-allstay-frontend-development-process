@@ -7,7 +7,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=3f757742fb90"
   },
   "eslintConfig": {
     "extends": [
@@ -113,5 +114,7 @@
     "@storybook/testing-library": "^0.0.13",
     "chromatic": "^6.15.0",
     "postcss-import-alias-resolver": "^0.1.1"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "react-js-tailwindcss-storybook-nov-2022@0.1.0"
 }
