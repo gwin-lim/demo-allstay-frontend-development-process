@@ -1,13 +1,9 @@
 import React from 'react';
 import '@style/style.css';
-import Logo from '@comp/Logo';
 
 function App() {
   return (
     <div className="flex flex-col h-full items-center justify-center bg-gray-200 text-gray-700">
-      <div className="flex items-center">
-        <Logo>this is just a test</Logo>
-      </div>
       <p className="my-6 tracking-wide">
         Edit <code>src/App.js</code> and save to reload.
       </p>
